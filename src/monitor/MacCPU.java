@@ -5,21 +5,19 @@
  */
 package monitor;
 
-import oshi.hardware.platform.linux.LinuxCentralProcessor;
-
+import oshi.hardware.platform.mac.MacCentralProcessor;
 
 /**
  *
- * @author Fast PC
+ * @author tomasmoran
  */
-public class LinuxCPU implements CPU{
+public class MacCPU implements CPU{
     
-     private final LinuxCentralProcessor cpu;
-
-    public LinuxCPU() {
-        this.cpu = new LinuxCentralProcessor();
+    private final MacCentralProcessor cpu;
+    
+    public MacCPU(){
+        this.cpu = new MacCentralProcessor();
     }
-    
     
     @Override
     public String getFamily() {
@@ -53,12 +51,14 @@ public class LinuxCPU implements CPU{
 
     @Override
     public double getVelocidadCPU() {
-       return ((cpu.getVendorFreq()/10000000)/100); //devuelve el los hz del procesador. la division se debe a que por ejemplo, si mi procesador es de 2.00hz el metodo getVendorFreq devuelve el valor 2000000000
+        return ((cpu.getVendorFreq()/10000000)/100);
     }
 
     @Override
     public double getUsoActualCPU() {
         return cpu.getSystemCpuLoad();
     }
+    
+    
     
 }
