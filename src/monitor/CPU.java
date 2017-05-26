@@ -11,4 +11,13 @@ package monitor;
  */
 public interface CPU {
     
+    String getFamily();
+    String getModel();
+    String getFabricante();
+    boolean esDe64Bits();
+    Integer getNucleos();
+    Integer getHilos();
+    double getVelocidadCPU();
+    double getUsoActualCPU();
+    
 }

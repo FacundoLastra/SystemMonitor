@@ -9,6 +9,9 @@ package monitor;
  *
  * @author Fast PC
  */
-public class CPULinux {
-    
+public interface Memoria {
+    Integer getMemFisicaTotal();
+    Integer getMemSwapTotal();
+    Integer getMemFisicaEnUso();
+    Integer getMemSwapEnUso();    
 }
