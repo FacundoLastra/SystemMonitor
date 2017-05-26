@@ -11,7 +11,7 @@ import oshi.hardware.platform.mac.MacCentralProcessor;
  *
  * @author tomasmoran
  */
-public class MacCPU implements CPU{
+public class MacCPU implements ICPU{
     
     private final MacCentralProcessor cpu;
     

@@ -10,9 +10,9 @@ package monitor;
  * @author turin
  */
 public abstract class Monitor {
-    private CPU cpuMonitor;
+    private ICPU cpuMonitor;
 
-    public CPU getCpuMonitor() {
+    public ICPU getCpuMonitor() {
         return cpuMonitor;
     }
     

@@ -6,6 +6,7 @@
 package monitor;
 
 
+
 import oshi.software.os.linux.LinuxOperatingSystem;
 import oshi.software.os.linux.LinuxOSVersionInfoEx;
 
@@ -14,24 +15,16 @@ import oshi.software.os.linux.LinuxOSVersionInfoEx;
  *
  * @author Fast PC
  */
-public class LinuxOS implements OS{
+public class LinuxOS extends OS{
 
-    private LinuxOperatingSystem os;
     
-    @Override
-    public String getFamiliaOS() {
-        return os.getFamily();       
+    public LinuxOS() {
+        super(new LinuxOperatingSystem(), new LinuxOSVersionInfoEx());
     }
+    
 
-    @Override
-    public String getVersionOS() {
-        LinuxOSVersionInfoEx info=new LinuxOSVersionInfoEx();
-        return info.getVersion();
-    }
-
-    @Override
-    public String getFabricanteOS() {
-        return os.getManufacturer();
-    }
+    
+    
+    
     
 }

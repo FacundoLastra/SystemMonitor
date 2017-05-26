@@ -6,7 +6,7 @@
 package monitor;
 
 
-public class LinuxMother implements Mother {
+public class LinuxMother implements IMother {
 
     @Override
     public String getMarcaMother() {

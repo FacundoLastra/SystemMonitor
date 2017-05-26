@@ -5,14 +5,13 @@
  */
 package monitor;
 
-import oshi.hardware.platform.linux.LinuxGlobalMemory;
 /**
  *
  * @author Fast PC
  */
-public class LinuxMem extends Memoria{    
-
-    public LinuxMem() {
-        super(new LinuxGlobalMemory());
-    }
+public interface IntOS {
+    String getFamiliaOS();
+    String getVersionOS();
+    String getFabricanteOS();
+    
 }

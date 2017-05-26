@@ -9,9 +9,9 @@ package monitor;
  *
  * @author Fast PC
  */
-public interface NIC {
-    Integer getIPv4();
-    Integer getMACAddress();
-    String getNombre();
-    
+public interface IMemoria {
+    Integer getMemFisicaTotal();
+    Integer getMemSwapTotal();
+    Integer getMemFisicaEnUso();
+    Integer getMemSwapEnUso();    
 }

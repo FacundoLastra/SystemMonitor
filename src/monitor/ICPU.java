@@ -5,16 +5,19 @@
  */
 package monitor;
 
-import oshi.hardware.platform.linux.LinuxCentralProcessor;
-
-
 /**
  *
  * @author Fast PC
  */
-public class LinuxCPU extends CPU{
+public interface ICPU {
     
-    public LinuxCPU() {
-        super(new LinuxCentralProcessor());
-    }
+    String getFamily();
+    String getModel();
+    String getFabricante();
+    boolean esDe64Bits();
+    Integer getNucleos();
+    Integer getHilos();
+    double getVelocidadCPU();
+    double getUsoActualCPU();
+    
 }
