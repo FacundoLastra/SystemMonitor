@@ -5,29 +5,34 @@
  */
 package monitor;
 import oshi.hardware.Sensors;
+
 /**
  *
  * @author tomasmoran
  */
 
-public class Sensores implements iSensor {
+public abstract class Sensores implements iSensor {
     
-    protected Sensors sensores;
+    protected Sensors Sens;
+    
+    public Sensores(Sensors sens){
+        this.Sens = sens;
+    }
     
     @Override
     public double getTempCPU() {
-        return sensores.getCpuTemperature();
+        return Sens.getCpuTemperature();
     }
 
     @Override
     public double getVoltajeCPU() {
-        return sensores.getCpuVoltage();
+        return Sens.getCpuVoltage();
     }
 
     @Override
-    public Integer[] getVelVentiladores() {
+    public int[] getVelVentiladores() {
         
-         
+        return Sens.getFanSpeeds();
         
     }
     

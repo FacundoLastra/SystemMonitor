@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package monitor;
-
+import oshi.hardware.platform.mac.MacSensors;
 /**
  *
  * @author tomasmoran
  */
-public interface iSensor {
+public class MacSensores extends Sensores {
     
-    double getTempCPU();
-    double getVoltajeCPU();
-    int[] getVelVentiladores();
+    public MacSensores() {
+        super(new MacSensors());
+    }
     
 }
