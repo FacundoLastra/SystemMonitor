@@ -1,4 +1,3 @@
-
 package monitor;
 
 import oshi.software.os.OperatingSystem;
