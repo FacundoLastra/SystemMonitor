@@ -5,16 +5,15 @@
  */
 package monitor;
 
-import oshi.hardware.platform.mac.MacCentralProcessor;
-
+import oshi.hardware.platform.mac.MacGlobalMemory;
 /**
  *
  * @author tomasmoran
  */
-public class MacCPU extends CPU{
+public class MacMemoria extends Memoria{
     
-    public MacCPU() {
-        super (new MacCentralProcessor());
+    public MacMemoria() {
+        super(new MacGlobalMemory()) ;
     }
     
 }
