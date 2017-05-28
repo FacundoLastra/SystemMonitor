@@ -3,7 +3,7 @@ package aplicacion;
 import java.io.IOException;
 import java.util.HashMap;
 import javax.swing.JFrame;
-import monitor.MonitorLinux;
+import monitor.LinuxMonitor;
 import monitor.Monitor;
 import oshi.SystemInfo;
 import ui.Home;
@@ -51,7 +51,7 @@ public class MonitorDelSistema {
         Aquí, si se provee el parámetro gui muestro la interfaz de usuario
         */
         if(argumentos.get("gui").equals("true")){
-            ventanaHome = construirHome(new MonitorLinux());
+            ventanaHome = construirHome(new LinuxMonitor());
             ventanaHome.setVisible(true);
             while (true) {
                 /*

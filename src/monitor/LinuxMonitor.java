@@ -5,12 +5,16 @@
  */
 package monitor;
 
-
-
 /**
  *
- * @author turin
+ * @author skydoo
  */
-public class MonitorLinux extends Monitor {
+public class LinuxMonitor extends Monitor{
+    
+   public LinuxMonitor()
+   {
+       super(new LinuxCPU(),new LinuxMem(),new LinuxMother(),new LinuxOS(),new LinuxNIC());
+       
+   }
     
 }
