@@ -1,21 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package monitor;
 
+import oshi.hardware.platform.linux.LinuxHardwareAbstractionLayer;
 
-public class LinuxMother implements IMother {
+/**
+ *
+ * @author Sim
+ */
 
-    @Override
-    public String getMarcaMother() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public class LinuxMother extends Mother {
+
+    public LinuxMother() {
+        
+        super((new LinuxHardwareAbstractionLayer()).getComputerSystem().getBaseboard());
     }
-
-    @Override
-    public String getModeloMother() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
