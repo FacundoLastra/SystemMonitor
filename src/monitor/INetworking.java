@@ -4,18 +4,16 @@
  * and open the template in the editor.
  */
 package monitor;
-import oshi.hardware.platform.linux.LinuxNetworks;
+
 /**
  *
  * @author skydoo
  */
-public class LinuxNIC extends Networking{
-  
-    public LinuxNIC() 
-    {
-        super(new LinuxNetworks().getNetworks());
-       
-    }
-  
+public interface INetworking {
+    
+    NIC[] getNics();
+    
+    
+    
     
 }
