@@ -5,6 +5,7 @@
  */
 package monitor;
 
+import java.util.ArrayList;
 import oshi.hardware.NetworkIF;
 
 /**
@@ -13,20 +14,25 @@ import oshi.hardware.NetworkIF;
  */
 public abstract class Networking implements INetworking {
     
-    private NIC[] nics;
+    private ArrayList<NIC> nics;
     
     public Networking(NetworkIF[] nics)
     {
-        for(int i=0;this.nics.length<nics.length;i++)
+        this.nics=new ArrayList<>();
+        int aux=nics.length-1;
+        for(int i=0;i<=aux;i++)
         {
-            this.nics[i]=new NIC(nics[i]);
+           
+            this.nics.add(new NIC(nics[i]));
+            
         }
     }
-    
+
     @Override
-    public NIC[] getNics()
-    {
-        return nics;
+    public ArrayList<NIC> getNics() {
+        return this.nics;
     }
+    
+    
     
 }

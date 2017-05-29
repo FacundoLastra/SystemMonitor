@@ -13,16 +13,23 @@ public abstract class Monitor {
     private ICPU cpuMonitor;
     private IMemoria memMonitor;
     private IMother motherMonitor;
-
-    public Monitor(ICPU cpuMonitor, IMemoria memMonitor, IMother motherMonitor, IntOS osMonitor, Networking nicMonitor) {
+    private IntOS osMonitor;
+    private Networking nicMonitor;
+    private Sensores sensMonitor;
+    
+    public Monitor(ICPU cpuMonitor, IMemoria memMonitor, IMother motherMonitor, IntOS osMonitor, Networking nicMonitor, Sensores sensMonitor) {
         this.cpuMonitor = cpuMonitor;
         this.memMonitor = memMonitor;
         this.motherMonitor = motherMonitor;
         this.osMonitor = osMonitor;
         this.nicMonitor = nicMonitor;
+        this.sensMonitor=sensMonitor;
     }
-    private IntOS osMonitor;
-    private Networking nicMonitor;
+
+    public Sensores getSensMonitor() {
+        return sensMonitor;
+    }
+    
 
     public ICPU getCpuMonitor() {
         return cpuMonitor;

@@ -5,16 +5,16 @@
  */
 package monitor;
 
+import oshi.hardware.platform.linux.LinuxSensors;
 /**
  *
  * @author skydoo
  */
-public class LinuxMonitor extends Monitor{
+public class LinuxSensores extends Sensores{
     
-   public LinuxMonitor()
-   {
-       super(new LinuxCPU(),new LinuxMem(),new LinuxMother(),new LinuxOS(),new LinuxNIC(),new LinuxSensores());
-       
-   }
+    public LinuxSensores()
+    {
+        super(new LinuxSensors());
+    }
     
 }

@@ -5,13 +5,15 @@
  */
 package monitor;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author skydoo
  */
 public interface INetworking {
     
-    NIC[] getNics();
+    ArrayList<NIC> getNics();
     
     
     
