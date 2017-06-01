@@ -11,7 +11,7 @@ import oshi.hardware.Sensors;
  * @author tomasmoran
  */
 
-public abstract class Sensores implements iSensor {
+public abstract class Sensores implements iSensor, sensorTojson {
     
     protected Sensors Sens;
     
@@ -36,6 +36,22 @@ public abstract class Sensores implements iSensor {
         
     }
     
-    
+    @Override
+    public String tojson(){
+
+        double temp = Sens.getCpuTemperature();
+        String temperatura= String.valueOf(temp);
+
+        double volta=Sens.getCpuVoltage();
+        String volt=String.valueOf(volta);
+        
+        int[] fan=Sens.getFanSpeeds();
+        String fans=String.valueOf(fan);
+        
+        String a= "{\"Temperatura\":"+temperatura+",\"Voltage\":"+volt+
+                ",\"Fan Speed\":"+fans+"}";
+        
+        return a;
+    }
     
 }

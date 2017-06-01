@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package persistencia;
+package monitor;
 
 /**
  *
- * @author turin
- * @param <T>
+ * @author tomasmoran
  */
-public interface JSONSerializable<T> {
-
-    String serializar();
-
-    T deserializar();
+public interface sensorTojson {
+    
+    String tojson();
+    
 }
