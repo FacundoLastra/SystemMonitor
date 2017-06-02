@@ -6,13 +6,14 @@
 package monitor;
 
 
+import java.util.Arrays;
 import oshi.hardware.NetworkIF;
 
 /**
  *
  * @author Fast PC
  */
-public class NIC implements INIC{
+public class NIC implements INIC,ToJSON{
 
     private NetworkIF net;
 
@@ -34,6 +35,15 @@ public class NIC implements INIC{
     @Override
     public String getNombre() {
         return net.getName();
+    }
+    @Override
+    public String toJSON(){
+    
+        
+        return "{\"Ipv4\":"+Arrays.toString(this.getIPv4())+
+                ",\"Mac\":"+this.getMACAddress()+
+                ",\"Nombre\":"+this.getNombre()+
+                "}";    
     }
     
 }

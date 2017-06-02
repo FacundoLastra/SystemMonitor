@@ -9,8 +9,8 @@ package monitor;
  *
  * @author tomasmoran
  */
-public interface sensorTojson {
+public interface ToJSON {
     
-    String tojson();
+    String toJSON();
     
 }

@@ -12,9 +12,13 @@ import oshi.hardware.CentralProcessor;
  *
  * @author skydoo
  */
-public abstract class CPU implements ICPU {
+public abstract class CPU implements ICPU,ToJSON {
     
     protected CentralProcessor cpu;
+    
+    public CPU(CentralProcessor cpu) {
+        this.cpu = cpu;
+    }
     
     @Override
     public String getFamily() {
@@ -25,11 +29,6 @@ public abstract class CPU implements ICPU {
     public String getModel() {
         return cpu.getModel();
     }
-
-    public CPU(CentralProcessor cpu) {
-        this.cpu = cpu;
-    }
-
     @Override
     public String getFabricante() {
         return cpu.getVendor();
@@ -59,6 +58,23 @@ public abstract class CPU implements ICPU {
     public double getUsoActualCPU() {
         return cpu.getSystemCpuLoad();
     }
+    
+    @Override
+    public String toJSON()
+    {
+        return "{\"Family\":"+this.getFamily()+
+                ",\"Model\":"+this.getModel()+
+                ",\"Fabricante\":"+this.getFabricante()+
+                ",\"esDe64Bits\":"+String.valueOf(this.esDe64Bits())+
+                ",\"Nucleos\":"+String.valueOf(this.getNucleos())+
+                ",\"Hilos\":"+String.valueOf(this.getHilos())+
+                ",\"VelocidadCPU\":"+String.valueOf(this.getVelocidadCPU())+
+                ",\"UsoActualCPU\":"+String.valueOf(this.getUsoActualCPU())+
+                "}";
+        
+    
+    }        
+       
     
     
     

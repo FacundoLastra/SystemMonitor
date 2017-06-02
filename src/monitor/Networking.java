@@ -12,7 +12,7 @@ import oshi.hardware.NetworkIF;
  *
  * @author skydoo
  */
-public abstract class Networking implements INetworking {
+public abstract class Networking implements INetworking,ToJSON {
     
     private ArrayList<NIC> nics;
     
@@ -31,6 +31,19 @@ public abstract class Networking implements INetworking {
     @Override
     public ArrayList<NIC> getNics() {
         return this.nics;
+    }
+    
+    @Override
+    public String toJSON()///testiar
+    {
+        String nic="[";
+        for (NIC a:this.nics)
+        {
+            nic=nic+a.toJSON()+",";
+        }
+        nic=nic.substring(0, nic.length()-1);
+        nic=nic+"]";
+      return nic;   
     }
     
     

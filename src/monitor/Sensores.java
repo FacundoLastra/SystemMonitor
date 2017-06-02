@@ -11,7 +11,7 @@ import oshi.hardware.Sensors;
  * @author tomasmoran
  */
 
-public abstract class Sensores implements iSensor, sensorTojson {
+public abstract class Sensores implements iSensor, ToJSON {
     
     protected Sensors Sens;
     
@@ -37,7 +37,7 @@ public abstract class Sensores implements iSensor, sensorTojson {
     }
     
     @Override
-    public String tojson(){
+    public String toJSON(){
 
         double temp = Sens.getCpuTemperature();
         String temperatura= String.valueOf(temp);
