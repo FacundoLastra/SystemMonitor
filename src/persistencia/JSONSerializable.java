@@ -12,7 +12,9 @@ package persistencia;
  */
 public interface JSONSerializable<T> {
 
-    String serializar();
+    ///String serializar();
+    
+    String toJSON();
 
-    T deserializar();
+    ///T deserializar();
 }

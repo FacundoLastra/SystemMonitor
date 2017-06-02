@@ -7,12 +7,13 @@ package monitor;
 
 import java.util.ArrayList;
 import oshi.hardware.NetworkIF;
+import persistencia.JSONSerializable;
 
 /**
  *
  * @author skydoo
  */
-public abstract class Networking implements INetworking,ToJSON {
+public abstract class Networking implements INetworking,JSONSerializable {
     
     private ArrayList<NIC> nics;
     

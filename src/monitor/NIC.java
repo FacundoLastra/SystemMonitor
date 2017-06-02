@@ -8,12 +8,13 @@ package monitor;
 
 import java.util.Arrays;
 import oshi.hardware.NetworkIF;
+import persistencia.JSONSerializable;
 
 /**
  *
  * @author Fast PC
  */
-public class NIC implements INIC,ToJSON{
+public class NIC implements INIC,JSONSerializable{
 
     private NetworkIF net;
 

@@ -5,13 +5,14 @@
  */
 package monitor;
 import oshi.hardware.Sensors;
+import persistencia.JSONSerializable;
 
 /**
  *
  * @author tomasmoran
  */
 
-public abstract class Sensores implements iSensor, ToJSON {
+public abstract class Sensores implements iSensor, JSONSerializable {
     
     protected Sensors Sens;
     
