@@ -5,6 +5,7 @@
  */
 package aplicacion;
 
+import monitor.linux.LinuxMonitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import monitor.*;

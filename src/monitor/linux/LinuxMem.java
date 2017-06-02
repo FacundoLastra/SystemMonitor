@@ -3,18 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monitor;
+package monitor.linux;
 
-import oshi.hardware.platform.linux.LinuxCentralProcessor;
-
-
+import monitor.Memoria;
+import oshi.hardware.platform.linux.LinuxGlobalMemory;
 /**
  *
  * @author Fast PC
  */
-public class LinuxCPU extends CPU{
-    
-    public LinuxCPU() {
-        super(new LinuxCentralProcessor());
+public class LinuxMem extends Memoria{    
+
+    public LinuxMem() {
+        super(new LinuxGlobalMemory());
     }
 }

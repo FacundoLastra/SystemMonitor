@@ -1,6 +1,7 @@
 
-package monitor;
+package monitor.linux;
 
+import monitor.Mother;
 import oshi.hardware.platform.linux.LinuxHardwareAbstractionLayer;
 
 /**

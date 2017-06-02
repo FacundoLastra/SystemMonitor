@@ -3,7 +3,7 @@ package aplicacion;
 import java.io.IOException;
 import java.util.HashMap;
 import javax.swing.JFrame;
-import monitor.LinuxMonitor;
+import monitor.linux.LinuxMonitor;
 import monitor.Monitor;
 import oshi.SystemInfo;
 import ui.Home;

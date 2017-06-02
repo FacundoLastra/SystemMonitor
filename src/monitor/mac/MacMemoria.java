@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monitor;
+package monitor.mac;
 
+import monitor.Memoria;
 import oshi.hardware.platform.mac.MacGlobalMemory;
 /**
  *

@@ -1,6 +1,7 @@
 
-package monitor;
+package monitor.windows;
 
+import monitor.OS;
 import oshi.software.os.windows.WindowsOperatingSystem;
 import oshi.software.os.windows.WindowsOSVersionInfoEx;
 

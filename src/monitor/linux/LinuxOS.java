@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monitor;
+package monitor.linux;
 
 
 
+import monitor.OS;
 import oshi.software.os.linux.LinuxOperatingSystem;
 import oshi.software.os.linux.LinuxOSVersionInfoEx;
 

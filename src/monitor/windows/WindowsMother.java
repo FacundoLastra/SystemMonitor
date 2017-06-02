@@ -1,6 +1,7 @@
 
-package monitor;
+package monitor.windows;
 
+import monitor.Mother;
 import oshi.hardware.platform.windows.WindowsHardwareAbstractionLayer;
 
 /**

@@ -1,6 +1,7 @@
 
-package monitor;
+package monitor.mac;
 
+import monitor.Mother;
 import oshi.hardware.platform.mac.MacHardwareAbstractionLayer;
 
 /**

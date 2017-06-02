@@ -1,6 +1,7 @@
 
-package monitor;
+package monitor.windows;
 
+import monitor.Memoria;
 import oshi.hardware.platform.windows.WindowsGlobalMemory;
 /**
  *

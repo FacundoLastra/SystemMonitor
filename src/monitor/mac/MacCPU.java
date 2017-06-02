@@ -3,16 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package monitor;
-import oshi.hardware.platform.mac.MacSensors;
+package monitor.mac;
+
+import monitor.CPU;
+import oshi.hardware.platform.mac.MacCentralProcessor;
+
 /**
  *
  * @author tomasmoran
  */
-public class MacSensores extends Sensores {
+public class MacCPU extends CPU{
     
-    public MacSensores() {
-        super(new MacSensors());
+    public MacCPU() {
+        super (new MacCentralProcessor());
     }
     
 }

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package aplicacion;
+import monitor.mac.Macmonitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import monitor.*;

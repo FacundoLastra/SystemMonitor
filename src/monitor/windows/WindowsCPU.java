@@ -1,6 +1,7 @@
 
-package monitor;
+package monitor.windows;
 
+import monitor.CPU;
 import oshi.hardware.platform.windows.WindowsCentralProcessor;
 
 
