@@ -24,27 +24,27 @@ public class Home extends javax.swing.JFrame {
     public Home(Monitor monitor) {
         this();
         this.monitor = monitor;
-        /*
-        lblCpuArquitectura.setText(monitor.cpuDe64Bits() ? "x64":"x86");
-        lblCpuMarca.setText(monitor.getCpuFabricante());
-        lblCpuModelo.setText(monitor.getCpuModelo());
-        lblCpuNucleosFisicos.setText(monitor.getCpuNucleosFisicos().toString());
-        lblCpuNucleosLogicos.setText(monitor.getCpuNucleosLogicos().toString());
-        lblMotherMarca.setText(monitor.getMotherMarca());
-        lblMotherModelo.setText(monitor.getMotherModelo());
-        lblOsFamilia.setText(monitor.getOsFamilia());
-        lblOsVersion.setText(monitor.getOsVersion());
-        lblRamTotal.setText(monitor.getMemFisicaTotal().toString());
-        */
+        
+        lblCpuArquitectura.setText(monitor.getCpuMonitor().esDe64Bits() ? "x64":"x86");
+        lblCpuMarca.setText(monitor.getCpuMonitor().getFabricante());
+        lblCpuModelo.setText(monitor.getCpuMonitor().getModel());
+        lblCpuNucleosFisicos.setText(monitor.getCpuMonitor().getNucleos().toString());
+        lblCpuNucleosLogicos.setText(monitor.getCpuMonitor().getHilos().toString());
+        lblMotherMarca.setText(monitor.getMotherMonitor().getMarcaMother());
+        lblMotherModelo.setText(monitor.getMotherMonitor().getModeloMother());
+        lblOsFamilia.setText(monitor.getOsMonitor().getFamiliaOS());
+        lblOsVersion.setText(monitor.getOsMonitor().getVersionOS());
+        lblRamTotal.setText(monitor.getMemMonitor().getMemFisicaTotal().toString());
+        
     }
     
     public void actualizarDatosSensorYCarga(){
-        /*
-        lblTempCpu.setText(monitor.getSensTemperaturaCPU().toString() + "°C");
+        
+        lblTempCpu.setText(String.valueOf(monitor.getSensMonitor().getTempCPU()) + "°C");
         DecimalFormat df = new DecimalFormat("0.00");
-        lblUsoCpu.setText(df.format(100*monitor.getCpuUsoActual()) + "%");
-        lblUsoRam.setText(String.valueOf(monitor.getMemFisicaEnUso()/1024/1024)+"mb");
-        */
+        lblUsoCpu.setText(df.format(100*monitor.getCpuMonitor().getUsoActualCPU()) + "%");
+        lblUsoRam.setText(String.valueOf(monitor.getMemMonitor().getMemFisicaEnUso())+"mb");
+        
     }
     
     public Integer getFrecuenciaActualizacion(){

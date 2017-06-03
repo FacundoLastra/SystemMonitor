@@ -27,10 +27,11 @@ public class MonitorDelSistema {
         HashMap<String, String> argumentos = new HashMap<>();
         //A cada string parámetro lo divido en el igual y uso el miembro de la 
         //izquierda como clave y al de la derecha como valor en el hashmap
-        for(String a : args){
+        String a="gui=true";
+        //for(String a : args){
             String[] partesArgumento = a.split("="); //Divido el string en el '='
             argumentos.put(partesArgumento[0], partesArgumento[1]); //Pongo clave y valor en el map
-        }
+        //}
         
         /*
         Aquí determino haciendo uso de un enum provisto en OSHI
