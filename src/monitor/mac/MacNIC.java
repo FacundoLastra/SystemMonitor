@@ -4,16 +4,18 @@
  * and open the template in the editor.
  */
 package monitor.mac;
-import monitor.Networking;
-import oshi.hardware.platform.mac.MacNetworks;
+
+import monitor.NIC;
+import oshi.hardware.NetworkIF;
+
 /**
  *
  * @author tomasmoran
  */
-public class MacNIC extends Networking{
+public class MacNIC extends NIC{
     
-    public MacNIC(){
-        super(new MacNetworks().getNetworks() );
+    public MacNIC(NetworkIF nic){
+        super(nic);
     }
     
 }

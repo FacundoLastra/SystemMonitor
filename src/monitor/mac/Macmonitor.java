@@ -14,7 +14,7 @@ import monitor.Monitor;
 public class Macmonitor extends Monitor{
 
     public Macmonitor(){
-        super(new MacCPU(),new MacMemoria(),new MacMother(),new MacOS(),new MacNIC(),
+        super(new MacCPU(),new MacMemoria(),new MacMother(),new MacOS(),new MacNetworking(),
                 new MacSensores() );
     }
   

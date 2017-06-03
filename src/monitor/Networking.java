@@ -17,6 +17,16 @@ public abstract class Networking implements INetworking,JSONSerializable {
     
     private ArrayList<NIC> nics;
     
+    public abstract ArrayList<NIC> crearArrayNics(NetworkIF[] nics); 
+    
+    public Networking(NetworkIF[] nics)
+    {
+        this.nics=this.crearArrayNics(nics);
+        
+        
+    }
+    
+    /*
     public Networking(NetworkIF[] nics)
     {
         this.nics=new ArrayList<>();
@@ -28,7 +38,9 @@ public abstract class Networking implements INetworking,JSONSerializable {
             
         }
     }
-
+    */
+    
+    
     @Override
     public ArrayList<NIC> getNics() {
         return this.nics;

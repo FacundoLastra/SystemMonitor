@@ -14,7 +14,7 @@ import persistencia.JSONSerializable;
  *
  * @author Fast PC
  */
-public class NIC implements INIC,JSONSerializable{
+public abstract class NIC implements INIC,JSONSerializable{
 
     private NetworkIF net;
 
