@@ -6,12 +6,13 @@
 package monitor;
 
 import java.util.ArrayList;
+import persistencia.JSONSerializable;
 
 /**
  *
  * @author skydoo
  */
-public interface INetworking {
+public interface INetworking extends JSONSerializable{
     
     ArrayList<NIC> getNics();
     

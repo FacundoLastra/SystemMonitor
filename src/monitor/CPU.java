@@ -6,14 +6,14 @@
 package monitor;
 
 import oshi.hardware.CentralProcessor;
-import persistencia.JSONSerializable;
+
 
 
 /**
  *
  * @author skydoo
  */
-public abstract class CPU implements ICPU,JSONSerializable {
+public abstract class CPU implements ICPU {
     
     protected CentralProcessor cpu;
     

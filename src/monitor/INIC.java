@@ -5,11 +5,13 @@
  */
 package monitor;
 
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author Fast PC
  */
-public interface INIC {
+public interface INIC extends JSONSerializable{
     String[] getIPv4();
     String getMACAddress();
     String getNombre();

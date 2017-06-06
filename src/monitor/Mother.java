@@ -27,4 +27,13 @@ public abstract class Mother implements IMother {
     public Mother(Baseboard mother) {
         this.mother = mother;
     }
+    
+    @Override
+    public String toJSON()
+    {
+        return "{\"MarcaMother\":"+this.getMarcaMother()+
+                ",\"ModeloMother\":"+this.getModeloMother()+
+                "}";
+    }
+    
 }

@@ -38,5 +38,13 @@ public abstract class OS implements IntOS{
     public String getFabricanteOS() {
         return os.getManufacturer();
     }
+    @Override
+    public String toJSON()
+    {
+        return "{\"FamiliaOS\":"+this.getFamiliaOS()+
+                ",\"VersionOS\":"+this.getVersionOS()+
+                ",\"FabricanteOS:"+this.getFabricanteOS()+
+                "}";
+    }
     
 }

@@ -51,5 +51,14 @@ public abstract class Memoria implements IMemoria{
         return this.pasarValorAMegaByte(memoria.getSwapUsed());
     }
     
+    @Override
+    public String toJSON()
+    {
+        return "{\"MemoriaFisicaTotal\":"+String.valueOf(this.getMemFisicaTotal())+
+                ",\"MemoriaSwapTotal\":"+String.valueOf(this.getMemSwapTotal())+
+                ",\"MemoriaFisicaEnUso\":"+String.valueOf(this.getMemFisicaEnUso())+
+                ",\"MemoriaSwapEnUso\":"+String.valueOf(this.getMemSwapEnUso())+"}";
+    }
+    
     
 }

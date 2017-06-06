@@ -5,11 +5,13 @@
  */
 package monitor;
 
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author Fast PC
  */
-public interface IntOS {
+public interface IntOS extends JSONSerializable{
     String getFamiliaOS();
     String getVersionOS();
     String getFabricanteOS();

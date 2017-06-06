@@ -5,11 +5,13 @@
  */
 package monitor;
 
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author Fast PC
  */
-public interface ICPU {
+public interface ICPU extends JSONSerializable{
     
     String getFamily();
     String getModel();

@@ -5,11 +5,13 @@
  */
 package monitor;
 
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author Fast PC
  */
-public interface IMemoria {
+public interface IMemoria extends JSONSerializable{
     Integer getMemFisicaTotal();
     Integer getMemSwapTotal();
     Integer getMemFisicaEnUso();

@@ -5,11 +5,13 @@
  */
 package monitor;
 
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author Fast PC
  */
-public interface IMother {
+public interface IMother extends JSONSerializable{
     String getMarcaMother();
     String getModeloMother();
     

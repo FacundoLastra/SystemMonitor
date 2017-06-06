@@ -5,11 +5,13 @@
  */
 package monitor;
 
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author tomasmoran
  */
-public interface iSensor {
+public interface iSensor extends JSONSerializable{
     
     double getTempCPU();
     double getVoltajeCPU();
