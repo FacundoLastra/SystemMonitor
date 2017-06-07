@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import javax.swing.JFrame;
 import monitor.linux.LinuxMonitor;
+import monitor.mac.MacMonitor;
+import monitor.windows.WindowsMonitor;
 import monitor.Monitor;
 import oshi.SystemInfo;
 import ui.Home;
@@ -38,11 +40,21 @@ public class MonitorDelSistema {
         el sistema operativo actual
         */
         Home ventanaHome = null;
+        int valor_so;
         // Entro en un switch con el resultado de getCurrentPlatformEnum()
         switch (SystemInfo.getCurrentPlatformEnum()) {
             //Armo los casos para cada OS
             case LINUX:
                 System.out.println("Usted tiene Linux instalado");
+                ventanaHome = construirHome(new LinuxMonitor());
+                break;
+            case MACOSX:
+                System.out.println("Usted tiene MacOSX instalado.");
+                ventanaHome = construirHome(new MacMonitor());
+                break;
+            case WINDOWS:
+                System.out.println("Usted tiene Windows instalado");
+                ventanaHome = construirHome(new WindowsMonitor());
                 break;
             default:
                 throw new Exception("Su sistema operativo aún no está soportado");
@@ -51,8 +63,9 @@ public class MonitorDelSistema {
         /*
         Aquí, si se provee el parámetro gui muestro la interfaz de usuario
         */
+        
         if(argumentos.get("gui").equals("true")){
-            ventanaHome = construirHome(new LinuxMonitor());
+            // ventanaHome = construirHome(new MacMonitor());
             ventanaHome.setVisible(true);
             while (true) {
                 /*
