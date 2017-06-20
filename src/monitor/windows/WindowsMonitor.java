@@ -16,7 +16,7 @@ public class WindowsMonitor extends Monitor {
     
     public WindowsMonitor(){
         super(new WindowsCPU(),new WindowsMem(),new WindowsMother(),
-                new WindowsOS(),new WindowsNetworking(),new WindowsSensores());
+                new WindowsOS(),new WindowsNetworking(),new WindowsSensores(),new WindowsDiskWork());
     }
     
 }
