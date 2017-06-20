@@ -19,14 +19,17 @@ public abstract class Monitor implements JSONSerializable{
     private IntOS osMonitor;
     private Networking nicMonitor;
     private Sensores sensMonitor;
+    private IStoreDiskWork hardDiskMonitor;
     
-    public Monitor(ICPU cpuMonitor, IMemoria memMonitor, IMother motherMonitor, IntOS osMonitor, Networking nicMonitor, Sensores sensMonitor) {
+    public Monitor(ICPU cpuMonitor, IMemoria memMonitor, IMother motherMonitor, 
+            IntOS osMonitor, Networking nicMonitor, Sensores sensMonitor, IStoreDiskWork hardDisk) {
         this.cpuMonitor = cpuMonitor;
         this.memMonitor = memMonitor;
         this.motherMonitor = motherMonitor;
         this.osMonitor = osMonitor;
         this.nicMonitor = nicMonitor;
         this.sensMonitor=sensMonitor;
+        this.hardDiskMonitor=hardDisk;
     }
 
     public Sensores getSensMonitor() {

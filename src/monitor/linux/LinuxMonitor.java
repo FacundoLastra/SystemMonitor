@@ -15,7 +15,7 @@ public class LinuxMonitor extends Monitor{
     
    public LinuxMonitor()
    {
-       super(new LinuxCPU(),new LinuxMem(),new LinuxMother(),new LinuxOS(),new LinuxNetworking(),new LinuxSensores());
+       super(new LinuxCPU(),new LinuxMem(),new LinuxMother(),new LinuxOS(),new LinuxNetworking(),new LinuxSensores(),new LinuxDiskWork());
        
    }
     
