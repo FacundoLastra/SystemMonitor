@@ -39,9 +39,10 @@ public class Home extends javax.swing.JFrame {
         lblRamTotal.setText(monitor.getMemMonitor().getMemFisicaTotal().toString());
         ArrayList<NIC>nics =monitor.getNicMonitor().getNics();
         
-        
         lblAdaptadorName.setText(nics.get(0).getNombre());
-        lblipv4.setText(nics.get(0).getIPv4()[0]);
+        
+        String a = nics.get(0).getIPv4()[0];// PUESTO 1 DEL GET FUNCIONA, PUESTO 0 NO (MAC)
+        lblipv4.setText(a);
         lblMac.setText(nics.get(0).getMACAddress());
     }
     

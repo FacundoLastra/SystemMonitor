@@ -11,9 +11,9 @@ import monitor.Monitor;
  *
  * @author tomasmoran
  */
-public class Macmonitor extends Monitor{
+public class MacMonitor extends Monitor{
 
-    public Macmonitor(){
+    public MacMonitor(){
         super(new MacCPU(),new MacMemoria(),new MacMother(),new MacOS(),new MacNetworking(),
                 new MacSensores() );
     }

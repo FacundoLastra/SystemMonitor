@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package aplicacion;
-import monitor.mac.Macmonitor;
+import monitor.mac.MacMonitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import monitor.*;
@@ -19,7 +19,7 @@ public class Test_infoMAC {
     Monitor mac;
     
     public Test_infoMAC(){
-        this.mac=new Macmonitor();
+        this.mac=new MacMonitor();
     }
     
     private void muestraDatosCPU(){
