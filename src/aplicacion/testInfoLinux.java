@@ -90,6 +90,7 @@ public  class testInfoLinux {
         info.mostrarDatosMother();
         info.mostrarDatosNIC();
         info.mostrarDatosSensores();
+        System.out.println(info.monitorLinux.toJSON());
         
     }
     

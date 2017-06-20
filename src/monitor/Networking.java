@@ -13,7 +13,7 @@ import persistencia.JSONSerializable;
  *
  * @author skydoo
  */
-public abstract class Networking implements INetworking,JSONSerializable {
+public abstract class Networking implements INetworking {
     
     private ArrayList<NIC> nics;
     

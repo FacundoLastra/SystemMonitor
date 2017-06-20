@@ -5,11 +5,14 @@
  */
 package monitor;
 
+import org.json.JSONStringer;
+import persistencia.JSONSerializable;
+
 /**
  *
  * @author turin
  */
-public abstract class Monitor {
+public abstract class Monitor implements JSONSerializable{
     private ICPU cpuMonitor;
     private IMemoria memMonitor;
     private IMother motherMonitor;
@@ -49,6 +52,17 @@ public abstract class Monitor {
 
     public Networking getNicMonitor() {
         return nicMonitor;
+    }
+    @Override
+    public String toJSON()
+    {
+        JSONStringer js=new JSONStringer();
+        String jsonresultado=js.object().key("cpuMonitor").value(this.cpuMonitor.toJSON()).
+                key("memMonitor").value(this.memMonitor.toJSON()).key("nicMonitor").value(this.nicMonitor.toJSON()).
+                key("osMonitor").value(this.osMonitor.toJSON()).key("sensMonitor").value(this.sensMonitor.toJSON()).endObject().toString();
+                
+        return jsonresultado;
+        
     }
     
     

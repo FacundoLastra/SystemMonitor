@@ -5,6 +5,7 @@
  */
 package monitor;
 
+import org.json.JSONStringer;
 import oshi.hardware.CentralProcessor;
 
 
@@ -63,6 +64,11 @@ public abstract class CPU implements ICPU {
     @Override
     public String toJSON()
     {
+        JSONStringer js=new JSONStringer();
+        js.object().key("Family").value(this.getFamily()).key("Model").value(this.getModel()).
+                key("Fabricante").value(this.getFabricante()).key("esDe64Bits").value(this.esDe64Bits()).
+                key("Nucleos").value(this.getNucleos());
+        
         return "{\"Family\":"+this.getFamily()+
                 ",\"Model\":"+this.getModel()+
                 ",\"Fabricante\":"+this.getFabricante()+
