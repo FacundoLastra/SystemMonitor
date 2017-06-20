@@ -15,7 +15,7 @@ public class MacMonitor extends Monitor{
 
     public MacMonitor(){
         super(new MacCPU(),new MacMemoria(),new MacMother(),new MacOS(),new MacNetworking(),
-                new MacSensores() );
+                new MacSensores(), new MacDiskWork() );
     }
   
 }
