@@ -19,10 +19,10 @@ public abstract class Monitor implements JSONSerializable{
     private IntOS osMonitor;
     private Networking nicMonitor;
     private Sensores sensMonitor;
-    private IStoreDiskWork hardDiskMonitor;
+    private StoreDiskWork hardDiskMonitor;
     
     public Monitor(ICPU cpuMonitor, IMemoria memMonitor, IMother motherMonitor, 
-            IntOS osMonitor, Networking nicMonitor, Sensores sensMonitor, IStoreDiskWork hardDisk) {
+            IntOS osMonitor, Networking nicMonitor, Sensores sensMonitor, StoreDiskWork hardDisk) {
         this.cpuMonitor = cpuMonitor;
         this.memMonitor = memMonitor;
         this.motherMonitor = motherMonitor;
@@ -55,6 +55,10 @@ public abstract class Monitor implements JSONSerializable{
 
     public Networking getNicMonitor() {
         return nicMonitor;
+    }
+    public StoreDiskWork getDiskMonitor()
+    {
+        return this.hardDiskMonitor;
     }
     @Override
     public String toJSON()

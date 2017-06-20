@@ -80,6 +80,20 @@ public  class testInfoLinux {
         System.out.println("Voltaje CPU: "+info.getVoltajeCPU());
         System.out.println("Velocidad Ventiladores"+Arrays.toString(info.getVelVentiladores()));
     }
+    private void mostrarDatosHardDisk()
+    {
+        IStoreDiskWork info=this.monitorLinux.getDiskMonitor();
+        ArrayList<HardDisk> disk =info.getDisks();
+        for(HardDisk disks:disk)
+        {
+            System.out.println("Mostrando Discos");
+            System.out.println("Modelo: "+ disks);
+            System.out.println("Nombre: "+ disks.getName());
+            System.out.println("Serial: "+disks.getSerial());
+            System.out.println("Tamaño: "+disks.getSize());
+            System.out.println("TransferTime: "+disks.getTransferTime());
+        }
+    }
             
     public static void main(String [] args)
     {
@@ -90,6 +104,7 @@ public  class testInfoLinux {
         info.mostrarDatosMother();
         info.mostrarDatosNIC();
         info.mostrarDatosSensores();
+        info.mostrarDatosHardDisk();
         System.out.println(info.monitorLinux.toJSON());
         
     }
