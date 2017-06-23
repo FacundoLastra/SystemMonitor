@@ -7,6 +7,7 @@ package monitor;
 
 
 import java.util.Arrays;
+import org.json.JSONStringer;
 import oshi.hardware.NetworkIF;
 import persistencia.JSONSerializable;
 
@@ -39,12 +40,20 @@ public abstract class NIC implements INIC,JSONSerializable{
     }
     @Override
     public String toJSON(){
-    
-        
+    /*
         return "{\"Ipv4\":"+Arrays.toString(this.getIPv4())+
                 ",\"Mac\":"+this.getMACAddress()+
                 ",\"Nombre\":"+this.getNombre()+
-                "}";    
+                "}";
+    */
+        JSONStringer js=new JSONStringer();
+        String jsonresultado=js.object().key("ipv4").value(Arrays.toString(this.getIPv4())).
+                key("mac").value(this.getMACAddress()).key("nombre").value(this.getNombre())
+                .endObject().toString();
+        
+        return jsonresultado;
+        
+        
     }
     
 }

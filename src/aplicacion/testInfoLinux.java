@@ -5,10 +5,12 @@
  */
 package aplicacion;
 
+import java.io.IOException;
 import monitor.linux.LinuxMonitor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import monitor.*;
+import persistencia.ArchivoJSON;
 
 
 /**
@@ -70,6 +72,7 @@ public  class testInfoLinux {
             System.out.println("Mac: "+a.getMACAddress());
             
         }
+        System.out.println(info.toJSON());
         
     }
     private void mostrarDatosSensores()
@@ -95,17 +98,20 @@ public  class testInfoLinux {
         }
     }
             
-    public static void main(String [] args)
+    public static void main(String [] args) throws IOException
     {
         testInfoLinux info=new testInfoLinux();
+        Monitor a=new LinuxMonitor();
+        ArchivoJSON archi=new ArchivoJSON();
+        archi.escribir(a.toJSON());
         
-        info.mostrarDatosCpu();
-        info.mostrarDatosMemoria();
-        info.mostrarDatosMother();
+        //info.mostrarDatosCpu();
+       // info.mostrarDatosMemoria();
+        //info.mostrarDatosMother();
         info.mostrarDatosNIC();
-        info.mostrarDatosSensores();
-        info.mostrarDatosHardDisk();
-        System.out.println(info.monitorLinux.toJSON());
+        //info.mostrarDatosSensores();
+       // info.mostrarDatosHardDisk();
+       // System.out.println(info.monitorLinux.toJSON());
         
     }
     

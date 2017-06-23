@@ -11,6 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Date;
 
 /**
  *
@@ -19,17 +20,34 @@ import java.nio.file.Paths;
 public class ArchivoJSON {
 
     private static FileWriter file;
-    
+    protected String extension;
     /**
      * Escribe la cadena JSON en el archivo
      * @param cadenaJson
      * @throws IOException 
      */
+    
+    public ArchivoJSON() throws IOException{
+        this.extension=".json";
+        ///configuracion del nombre del archivo
+        String path=System.getProperty("user.dir")+"MonitorSistema"
+                +String.valueOf(new Date())+this.extension;
+        ///
+        file = new FileWriter(path);
+        
+        
+    }
+
     public void escribir(String cadenaJson) throws IOException {
-        this.abrir();
-        /*
-        ....
-        */
+        try{
+            file.append(cadenaJson);
+            
+        }catch(IOException e)
+        {
+            throw e;
+        }finally{
+            file.flush();
+        }
         
     }
     
