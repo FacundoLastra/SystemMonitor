@@ -1,6 +1,8 @@
 package monitor;
 import oshi.hardware.HWDiskStore;
 
+import org.json.JSONStringer;
+
 /**
  *
  * @author Sim
@@ -42,6 +44,18 @@ public abstract class HardDisk implements IHardDisk {
     public long getTransferTime() {
 
         return this.Disks.getTransferTime();
+    }
+    
+    @Override
+    public String toJSON() {
+        
+        JSONStringer js=new JSONStringer();
+        String jsonresultado=js.object().key("name").value(this.getName()).
+                key("model").value(this.getModel()).key("serial").value(this.getSerial()).
+                key("size").value(this.getSize()).key("transferTime").value(this.getTransferTime()).endObject().toString();
+        
+        
+        return jsonresultado;
     }
 
 }

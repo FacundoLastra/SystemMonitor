@@ -2,6 +2,7 @@
 package monitor;
 
 import java.util.ArrayList;
+import org.json.JSONStringer;
 import oshi.hardware.HWDiskStore;
 
 /**
@@ -28,5 +29,19 @@ public abstract class StoreDiskWork implements IStoreDiskWork{
     public ArrayList<HardDisk> getDisks () {
         
         return this.disk;
+    }
+        
+    @Override
+    public String toJSON()
+    {
+        String dk="[";
+        for (HardDisk a:this.getDisks())
+        {
+            dk=dk+a.toJSON()+",";
+        }
+        dk=dk.substring(0, dk.length()-1);
+        dk=dk+"]";
+        
+      return dk;   
     }
 }
