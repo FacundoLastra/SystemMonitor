@@ -7,6 +7,7 @@ package monitor;
 
 import oshi.software.os.OperatingSystem;
 import oshi.software.os.OperatingSystemVersion;
+import org.json.JSONStringer;
 
 
 /**
@@ -40,11 +41,16 @@ public abstract class OS implements IntOS{
     }
     @Override
     public String toJSON()
-    {
-        return "{\"FamiliaOS\":"+this.getFamiliaOS()+
-                ",\"VersionOS\":"+this.getVersionOS()+
-                ",\"FabricanteOS:"+this.getFabricanteOS()+
-                "}";
+    {   
+        JSONStringer js = new JSONStringer();
+        String ret;
+        ret= js.object().key("Familia del OS: ").value(this.getFamiliaOS()).
+                key("Version del OS: ").value(this.getVersionOS()).
+                key("Fabricante: ").value(this.getFabricanteOS()).endObject().toString();
+        
+        return ret;
+        
+        
     }
     
 }

@@ -2,6 +2,7 @@
 package monitor;
 
 import oshi.hardware.Baseboard;
+import org.json.JSONStringer;
 
 /**
  *
@@ -31,9 +32,13 @@ public abstract class Mother implements IMother {
     @Override
     public String toJSON()
     {
-        return "{\"MarcaMother\":"+this.getMarcaMother()+
-                ",\"ModeloMother\":"+this.getModeloMother()+
-                "}";
+        JSONStringer js = new JSONStringer();
+        String ret;
+        ret=js.object().key("Modelo Mother: ").value(this.getModeloMother()).
+                key("Marca Mother: ").value(this.getMarcaMother()).endObject().toString();
+        
+        return ret;
+        
     }
     
 }

@@ -6,6 +6,7 @@
 package monitor;
 
 import oshi.hardware.GlobalMemory;
+import org.json.JSONStringer;
 
 /**
  *
@@ -54,10 +55,16 @@ public abstract class Memoria implements IMemoria{
     @Override
     public String toJSON()
     {
-        return "{\"MemoriaFisicaTotal\":"+String.valueOf(this.getMemFisicaTotal())+
-                ",\"MemoriaSwapTotal\":"+String.valueOf(this.getMemSwapTotal())+
-                ",\"MemoriaFisicaEnUso\":"+String.valueOf(this.getMemFisicaEnUso())+
-                ",\"MemoriaSwapEnUso\":"+String.valueOf(this.getMemSwapEnUso())+"}";
+        JSONStringer js = new JSONStringer();
+        String returnjs;
+        
+        returnjs = js.object().key("Memoria fisica total: ").value(this.getMemFisicaTotal()).
+                key("Memoria Swap Total: ").value(this.getMemSwapTotal()).
+                key("Memoria fisica en uso: ").value(this.getMemFisicaEnUso()).
+                key("Memoria Swap en uso: ").value(this.getMemSwapEnUso()).endObject().toString();
+        
+        return returnjs;
+        
     }
     
     

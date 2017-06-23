@@ -39,6 +39,7 @@ public class MonitorDelSistema {
         Aquí determino haciendo uso de un enum provisto en OSHI
         el sistema operativo actual
         */
+        
         Home ventanaHome = null;
         int valor_so;
         // Entro en un switch con el resultado de getCurrentPlatformEnum()
@@ -50,7 +51,7 @@ public class MonitorDelSistema {
                 break;
             case MACOSX:
                 System.out.println("Usted tiene MacOSX instalado.");
-                ventanaHome = construirHome(new MacMonitor());
+                ventanaHome = construirHome(new MacMonitor() );
                 break;
             case WINDOWS:
                 System.out.println("Usted tiene Windows instalado");

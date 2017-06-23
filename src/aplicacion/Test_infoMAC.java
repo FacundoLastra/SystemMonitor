@@ -79,7 +79,22 @@ public class Test_infoMAC {
         System.out.println("Voltaje CPU: "+info.getVoltajeCPU());
         System.out.println("Velocidad Ventiladores"+Arrays.toString(info.getVelVentiladores()));
     }
-            
+    
+    private void mostrarDisk(){
+        
+        IStoreDiskWork aux = this.mac.getDiskMonitor();
+        System.out.println(" ");
+        System.out.println("---------- StoreDiskWorkDATOS DEL DISCO ----------");
+        ArrayList<HardDisk> aux2 = aux.getDisks();
+        int n=0;
+        for(HardDisk imp: aux2 )
+        {
+            System.out.println("Disco numero "+n+": ");
+            System.out.println( imp.getModel() );
+            n++;
+        }
+    }
+    
     public static void main(String [] args)
     {
         Test_infoMAC info=new Test_infoMAC();
@@ -89,6 +104,7 @@ public class Test_infoMAC {
         info.mostrarDatosMother();
         info.mostrarDatosNIC();
         info.mostrarDatosSensores();
+        info.mostrarDisk();
         
     }
     

@@ -5,6 +5,7 @@
  */
 package monitor;
 import oshi.hardware.Sensors;
+import org.json.JSONStringer;
 
 
 /**
@@ -40,19 +41,15 @@ public abstract class Sensores implements iSensor{
     @Override
     public String toJSON(){
 
-        double temp = Sens.getCpuTemperature();
-        String temperatura= String.valueOf(temp);
+        JSONStringer js = new JSONStringer();
+        String ret;
+        ret = js.object().key("Temperatura CPU: ").value(this.getTempCPU()).
+                key("Voltaje CPU: ").value(this.getVoltajeCPU()).
+                key("Velocidad ventiladores: ").value(this.getVelVentiladores()).
+                endObject().toString();
+        
+        return ret;
 
-        double volta=Sens.getCpuVoltage();
-        String volt=String.valueOf(volta);
-        
-        int[] fan=Sens.getFanSpeeds();
-        String fans=String.valueOf(fan);
-        
-        String a= "{\"Temperatura\":"+temperatura+",\"Voltage\":"+volt+
-                ",\"Fan Speed\":"+fans+"}";
-        
-        return a;
     }
     
 }

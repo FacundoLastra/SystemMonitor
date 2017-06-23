@@ -41,9 +41,9 @@ public class Home extends javax.swing.JFrame {
         
         lblAdaptadorName.setText(nics.get(0).getNombre());
         
-        String a = nics.get(0).getIPv4()[0];// PUESTO 1 DEL GET FUNCIONA, PUESTO 0 NO (MAC)
-        lblipv4.setText(a);
-        lblMac.setText(nics.get(0).getMACAddress());
+        // String a = nics.get(0).getIPv4()[0];// PUESTO 1 DEL GET FUNCIONA, PUESTO 0 NO (MAC)
+        // lblipv4.setText(a);
+        // lblMac.setText(nics.get(0).getMACAddress());
     }
     
     public void actualizarDatosSensorYCarga(){

@@ -65,19 +65,12 @@ public abstract class CPU implements ICPU {
     public String toJSON()
     {
         JSONStringer js=new JSONStringer();
-        js.object().key("Family").value(this.getFamily()).key("Model").value(this.getModel()).
+        String returnjs;
+        returnjs= js.object().key("Family").value(this.getFamily()).key("Model").value(this.getModel()).
                 key("Fabricante").value(this.getFabricante()).key("esDe64Bits").value(this.esDe64Bits()).
-                key("Nucleos").value(this.getNucleos());
+                key("Nucleos").value(this.getNucleos()).endObject().toString();
         
-        return "{\"Family\":"+this.getFamily()+
-                ",\"Model\":"+this.getModel()+
-                ",\"Fabricante\":"+this.getFabricante()+
-                ",\"esDe64Bits\":"+String.valueOf(this.esDe64Bits())+
-                ",\"Nucleos\":"+String.valueOf(this.getNucleos())+
-                ",\"Hilos\":"+String.valueOf(this.getHilos())+
-                ",\"VelocidadCPU\":"+String.valueOf(this.getVelocidadCPU())+
-                ",\"UsoActualCPU\":"+String.valueOf(this.getUsoActualCPU())+
-                "}";
+        return returnjs;
         
     
     }        
